@@ -17,7 +17,7 @@ body {
   justify-content: center;
   background: linear-gradient(135deg,#0f172a,#1e293b);
   font-family: sans-serif;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Scene & Wrapper */
@@ -28,6 +28,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
+ padding: 0px;
 }
 
 .book-wrapper {
@@ -35,14 +36,13 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform 0.5s ease;
+    overflow: visible;	
 }
 
 /* Book */
 .book {
-  width: 40vw;
-  max-width: 400px;
-  height: 60vw;
-  max-height: 600px;
+  width: 320px;      /* FIXED width */
+  height: 520px;     /* FIXED height */
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s ease;
@@ -65,7 +65,7 @@ body {
   transition: transform 1s ease;
   z-index: 3;
   border-radius: 2vw;
-  box-shadow: 0 3vh 6vh rgba(0,0,0,0.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .cover-front, .cover-back {
@@ -83,7 +83,7 @@ body {
 .back-cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .cover-back { transform: rotateY(180deg); }
@@ -95,7 +95,7 @@ body {
   height: 100%;
   border-radius: 2vw;
   overflow: hidden;
-  box-shadow: 0 2.5vh 5vh rgba(0,0,0,0.3);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.3);
   z-index: 1;
 }
 
@@ -104,27 +104,14 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 2vw;
+  border-radius: 10px;
   overflow: hidden;
   transform: rotateY(180deg);
   backface-visibility: hidden;
   z-index: 0;
 }
 
-/* Stamp */
-.stamp{
-  position:absolute;
-  bottom:40px;
-  right:240px;
-  border:3px solid #b91c1c;
-  color:#b91c1c;
-  padding:11px;
-  border-radius:50%;
-  font-weight:bold;
-  font-size:9px;
-  transform:scale(0);
-  opacity:0%;
-}
+
 
 .book.open .stamp {
   animation: stamp 0.6s ease forwards 1s;
@@ -141,12 +128,7 @@ body {
 .book.back-view .page { z-index: 10; }
 .book.back-view .cover { z-index: 15; }
 
-/* Responsive adjustments */
-@media(max-width: 768px){
-  .book { width: 30vw; height: 105vw; }
-  .stamp { font-size: 10vw; padding: 1.8vw; border-width: 0.07vw; }
-  .cover, .page, .back-cover { border-radius: 4vw; }
-}
+
 </style>
 </head>
 <body>
@@ -217,3 +199,4 @@ book.addEventListener("click", () => {
 </body>
 
 </html>
+
