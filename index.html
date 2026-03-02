@@ -112,18 +112,18 @@ body {
 }
 
 /* Stamp */
-.stamp {
-  position: absolute;
-  bottom: 2%;
-  left: 30%;
-  border: 1vw solid #b91c1c;
-  color: #b91c1c;
-  padding: 0.2vw;
-  border-radius: 10%;
-  font-weight: bold;
-  font-size: 1vw;
-  transform: scale(0);
-  opacity: 0;
+.stamp{
+  position:absolute;
+  bottom:40px;
+  right:240px;
+  border:3px solid #b91c1c;
+  color:#b91c1c;
+  padding:11px;
+  border-radius:50%;
+  font-weight:bold;
+  font-size:9px;
+  transform:scale(0);
+  opacity:0%;
 }
 
 .book.open .stamp {
@@ -131,8 +131,8 @@ body {
 }
 
 @keyframes stamp {
-  0% { transform: scale(3); opacity: 0; }
-  100% { transform: rotate(-80deg) scale(1); opacity: 1; }
+  0% { transform: scale(3); opacity: 50; }
+  100% { transform: rotate(-80deg) scale(1); opacity: 5; }
 }
 
 /* Layer order when showing back */
@@ -216,30 +216,3 @@ book.addEventListener("click", () => {
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
